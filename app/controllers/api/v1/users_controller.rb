@@ -18,6 +18,18 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:username,:password,:bio,:avatar)
+    params.require(:user).permit(:username,
+                                  :password,
+                                  :profile_img_url,
+                                  :pref_busyness,
+                                  :pref_noise_level,
+                                  :pref_ambiance,
+                                  :pref_coffee_quality,
+                                  :pref_light_roast,
+                                  :pref_medium_roast,
+                                  :pref_dark_roast,
+                                  :pref_table_space,
+                                  :pref_studying
+                                )
   end
 end
