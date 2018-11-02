@@ -3,6 +3,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
     create_table :reviews do |t|
       t.integer :user_id
       t.integer :location_id
+      t.string :img_url
       t.string :title
       t.text :written_content
       t.string :atmosphere
@@ -16,7 +17,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.integer :score_value
       t.integer :score_coffee_quality
       t.string :score_roast
-      
+
       t.timestamps
     end
   end

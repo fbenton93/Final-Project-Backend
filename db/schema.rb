@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2018_10_30_160647) do
     t.string "name"
     t.string "address_line_1"
     t.string "address_line_2"
-    t.string "lat"
-    t.string "lng"
+    t.float "lat"
+    t.float "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_160647) do
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id"
     t.integer "location_id"
+    t.string "img_url"
     t.string "title"
     t.text "written_content"
     t.string "atmosphere"
