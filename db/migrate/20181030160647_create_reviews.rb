@@ -7,7 +7,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :written_content
       t.string :atmosphere
-      t.string :time_visited
+      t.float :time_visited
       t.integer :score_busyness
       t.integer :score_ambiance
       t.integer :score_table_space

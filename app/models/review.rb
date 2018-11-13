@@ -29,7 +29,12 @@ class Review < ApplicationRecord
     end
 
     return @averages
-
   end
+
+  def location_name
+    self.location.name
+  end
+
+
 
 end

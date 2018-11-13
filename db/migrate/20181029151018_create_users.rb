@@ -16,6 +16,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.integer :pref_table_space
       t.integer :pref_noise_level
       t.integer :pref_studying
+      t.boolean :disabled, :default => false
 
 
       t.timestamps

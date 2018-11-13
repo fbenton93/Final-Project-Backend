@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_160647) do
     t.string "title"
     t.text "written_content"
     t.string "atmosphere"
-    t.string "time_visited"
+    t.float "time_visited"
     t.integer "score_busyness"
     t.integer "score_ambiance"
     t.integer "score_table_space"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_160647) do
     t.integer "pref_table_space"
     t.integer "pref_noise_level"
     t.integer "pref_studying"
+    t.boolean "disabled", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
