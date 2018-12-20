@@ -1,4 +1,6 @@
 class Location < ApplicationRecord
+  acts_as_mappable
+
   validates :name, length: { minimum: 3 }
   validates :address_line_1, uniqueness: true
   validates :lat, presence: true
@@ -83,6 +85,7 @@ class Location < ApplicationRecord
     end
     return @responses
   end
+
 
 
 

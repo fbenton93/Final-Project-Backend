@@ -1,3 +1,5 @@
+require 'geokit-rails'
+
 class Api::V1::LocationsController < ApplicationController
   skip_before_action :authorized #temporarily disable until monday
 
@@ -28,11 +30,20 @@ class Api::V1::LocationsController < ApplicationController
     render json: {locations: @locations}
   end
 
+  def five
+    first_five = Location.by_distance(:origin => [location_params[:lat],location_params[:lng]]).slice(0,5)
+    deliverable = first_five.map do |location|
+      {location: location, img: location.reviews[0].img_url, distance: (location.distance_from([location_params[:lat],location_params[:lng]], :units => :miles))}
+    end
+    render json: {locations: deliverable}
+  end
+
   private
 
   def location_params
     params.require(:location).permit(:name,:lineOne,:lineTwo,:lat,:lng)
   end
+
 
 
 end
